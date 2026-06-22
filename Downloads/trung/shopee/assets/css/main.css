@@ -1,0 +1,46 @@
+.header {
+    height: 120px;
+    background-image: linear-gradient(0, #ff5722, #ff9800);
+}
+.header__navbar {
+   display: flex;
+   justify-content: space-between;
+}
+.header__navbar-item {
+    margin: 0 8px;
+}
+.header__navbar-list{
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+.header__navbar-item,
+.header__navbar-item-link {
+    display: inline-block;
+    font-size: 1.4rem;
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: 300;
+}
+.header__navbar-item--strong {
+    font-weight: 500;
+}
+.header__navbar-item--separate {
+    position: relative;
+    padding-right: 0.8rem;
+}
+.header__navbar-item--separate::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 12px;
+    background-color: #FB9086;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Fallback: show a visible divider using border if pseudo-element fails */
+.header__navbar-item--separate {
+    border-right: 1px solid #FB9086;
+}
