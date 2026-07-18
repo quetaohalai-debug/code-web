@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopee - Sản phẩm</title>
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <nav class="header__navbar">
+                <ul class="header__navbar-list">
+                    <li class="header__navbar-item header__navbar-item--separate">Vào cửa hàng trên ứng dụng TrungLee</li>
+                    <li class="header__navbar-item">Kết nối</li>
+                </ul>
+                <ul class="header__navbar-list">
+                    <li class="header__navbar-item">
+                        <a href="#" class="header__navbar-item-link">Thông báo</a>
+                    </li>
+                    <li class="header__navbar-item">
+                        <a href="#" class="header__navbar-item-link">Hỗ trợ</a>
+                    </li>
+                    <li class="header__navbar-item header__navbar-item--strong">
+                        <a href="#" class="header__navbar-item-link header__navbar-item-link--button">Đăng nhập</a>
+                    </li>
+                    <li class="header__navbar-item header__navbar-item--strong">
+                        <a href="#" class="header__navbar-item-link header__navbar-item-link--button">Đăng ký</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header__main">
+                <a href="#" class="header__logo">Shopee</a>
+
+                <form class="header__search" id="search-form">
+                    <input type="text" class="header__search-input" id="search-input" placeholder="Tìm kiếm sản phẩm...">
+                    <button class="header__search-btn" type="submit">Tìm</button>
+                </form>
+
+                <div class="header__actions">
+                    <!-- Nâng cấp icon Giỏ hàng có Badge nhảy số -->
+                    <div class="header__cart-wrapper">
+                        <a href="#" class="header__cart">🛒</a>
+                        <span class="header__cart-badge" id="cart-count">0</span>
+                    </div>
+                    <a href="#" class="header__login">Đăng nhập</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <section class="category-list">
+                <div class="category-item">📱 Điện thoại</div>
+                <div class="category-item">💻 Laptop</div>
+                <div class="category-item">🎧 Tai nghe</div>
+                <div class="category-item">🧥 Thời trang</div>
+                <div class="category-item">🛋️ Nhà cửa</div>
+                <div class="category-item">🧴 Làm đẹp</div>
+                <div class="category-item">🧸 Đồ chơi</div>
+                <div class="category-item">🛒 Mua sắm</div>
+            </section>
+
+            <section class="hero-banner">
+                <div class="hero-banner__main">
+                    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80" alt="Shopee banner">
+                    <div class="hero-banner__content">
+                        <p class="hero-banner__tag">Mua sắm thông minh</p>
+                        <h1>Khám phá ưu đãi mới mỗi ngày</h1>
+                        <a href="#" class="hero-banner__button">Mua ngay</a>
+                    </div>
+                </div>
+                <div class="hero-banner__side">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80" alt="Sale 1">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=700&q=80" alt="Sale 2">
+                </div>
+            </section>
+
+            <section class="promo-strip">
+                <span>🚚 Miễn phí vận chuyển đơn từ 99k</span>
+                <span>🎁 Quà tặng hấp dẫn mỗi ngày</span>
+                <span>💳 Thanh toán an toàn</span>
+            </section>
+
+            <section class="trust-strip">
+                <div class="trust-item">✅ Hàng chính hãng</div>
+                <div class="trust-item">⚡ Giao hàng siêu tốc</div>
+                <div class="trust-item">🔒 Bảo mật thanh toán</div>
+            </section>
+
+            <section class="flash-sale">
+                <div class="flash-sale__header">
+                    <h2>⚡ Flash Sale</h2>
+                    <span>Giảm giá sốc trong hôm nay</span>
+                </div>
+                <div class="flash-sale__list">
+                    <div class="flash-sale__item">
+                        <div class="flash-sale__price">₫199.000</div>
+                        <div class="flash-sale__label">Vừa mở bán</div>
+                    </div>
+                    <div class="flash-sale__item">
+                        <div class="flash-sale__price">₫349.000</div>
+                        <div class="flash-sale__label">Hot deal</div>
+                    </div>
+                    <div class="flash-sale__item">
+                        <div class="flash-sale__price">₫89.000</div>
+                        <div class="flash-sale__label">Giảm sâu</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="product-section">
+                <div class="product-section__header">
+                    <h2 class="product-section__title">Gợi ý hôm nay</h2>
+                    <a href="#" class="product-section__link">Xem tất cả</a>
+                </div>
+
+                <!-- Nơi JavaScript sẽ tự động render sản phẩm vào đây -->
+                <div class="product-list" id="product-list-container"></div>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <div class="footer__content">
+                <p>© 2026 Shopee Clone</p>
+                <p>Chất lượng hàng đầu - Giá tốt mỗi ngày</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // 1. MẢNG DỮ LIỆU SẢN PHẨM (Thay vì hardcode bằng HTML)
+        const productsData = [
+            { id: 1, name: "Điện thoại thông minh mới nhất, pin bền, camera đẹp", price: "9.990.000", rating: "4.9", sold: "1,2k", badge: "Yêu thích", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80", bgClass: "" },
+            { id: 2, name: "Tai nghe Bluetooth chống ồn, âm thanh sống động", price: "799.000", rating: "4.8", sold: "890", badge: "Giảm 20%", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80", bgClass: "product-item__img--pink" },
+            { id: 3, name: "Đồng hồ thông minh theo dõi sức khỏe", price: "1.299.000", rating: "4.7", sold: "650", badge: "Mới", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80", bgClass: "product-item__img--green" },
+            { id: 4, name: "Đền LED chống nước cho không gian sống", price: "289.000", rating: "4.6", sold: "2,3k", badge: "Bán chạy", img: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=800&q=80", bgClass: "product-item__img--blue" },
+            { id: 5, name: "Áo khoác casual thời trang, phong cách năng động", price: "450.000", rating: "4.8", sold: "1,1k", badge: "Hot", img: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80", bgClass: "product-item__img--yellow" },
+            { id: 6, name: "Bộ phụ kiện trang trí xanh cho bàn làm việc", price: "199.000", rating: "4.5", sold: "760", badge: "Giảm 15%", img: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=800&q=80", bgClass: "product-item__img--purple" },
+            { id: 7, name: "Sữa rửa mặt dịu nhẹ, phù hợp mọi loại da", price: "180.000", rating: "4.7", sold: "1,5k", badge: "Sale", img: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=80", bgClass: "product-item__img--orange" },
+            { id: 8, name: "Gấu bông mềm mại cho trẻ em và người lớn", price: "120.000", rating: "4.9", sold: "980", badge: "Mua 2 giảm 10%", img: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=800&q=80", bgClass: "product-item__img--gray" }
+        ];
+
+        let cartCount = 0;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const productContainer = document.getElementById('product-list-container');
+            const cartCountBadge = document.getElementById('cart-count');
+            const searchForm = document.getElementById('search-form');
+            const searchInput = document.getElementById('search-input');
+            const body = document.body;
+
+            function showToast(message) {
+                let toast = document.getElementById('toast-message');
+                if (!toast) {
+                    toast = document.createElement('div');
+                    toast.id = 'toast-message';
+                    toast.className = 'toast-message';
+                    body.appendChild(toast);
+                }
+                toast.textContent = message;
+                toast.classList.add('show');
+                clearTimeout(showToast.timeoutId);
+                showToast.timeoutId = setTimeout(() => toast.classList.remove('show'), 1800);
+            }
+
+            // 2. HÀM VẼ SẢN PHẨM RA MÀN HÌNH (Dùng mảng để render dữ liệu động)
+            function renderProducts(products) {
+                productContainer.innerHTML = ''; // Xóa hết sản phẩm cũ đi trước khi vẽ lại
+                
+                if(products.length === 0) {
+                    productContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center; font-size: 16px; color: #555; padding: 20px;">Không tìm thấy sản phẩm nào phù hợp :(</p>';
+                    return;
+                }
+
+                products.forEach((product, index) => {
+                    const article = document.createElement('article');
+                    article.className = 'product-item';
+                    
+                    // Tạo cấu trúc HTML cho từng sản phẩm giống hệt code cũ của bạn
+                    article.innerHTML = `
+                        <div class="product-item__img ${product.bgClass}">
+                            <span class="product-item__badge">${product.badge}</span>
+                            <img src="${product.img}" alt="${product.name}">
+                        </div>
+                        <div class="product-item__info">
+                            <h3 class="product-item__name">${product.name}</h3>
+                            <div class="product-item__price">₫${product.price}</div>
+                            <div class="product-item__meta">
+                                <span class="product-item__rating">★ ${product.rating}</span>
+                                <span>Đã bán ${product.sold}</span>
+                            </div>
+                            <button class="product-item__btn-add" data-id="${product.id}">Thêm vào giỏ</button>
+                        </div>
+                    `;
+                    
+                    productContainer.appendChild(article);
+
+                    // Hiệu ứng Fade-in cũ của bạn giữ nguyên
+                    article.style.opacity = '0';
+                    article.style.transform = 'translateY(20px)';
+                    article.style.transition = 'all 0.5s ease';
+                    setTimeout(() => {
+                        article.style.opacity = '1';
+                        article.style.transform = 'translateY(0)';
+                    }, 120 * index);
+                });
+
+                // Kích hoạt lại sự kiện click nút "Thêm vào giỏ" sau khi render xong
+                initCartEvents();
+            }
+
+            function filterProducts(keyword) {
+                const filteredProducts = productsData.filter(product => 
+                    product.name.toLowerCase().includes(keyword)
+                );
+                renderProducts(filteredProducts);
+            }
+
+            searchForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                filterProducts(searchInput.value.trim().toLowerCase());
+            });
+
+            searchInput.addEventListener('input', () => {
+                filterProducts(searchInput.value.trim().toLowerCase());
+            });
+
+            // 4. LOGIC THÊM VÀO GIỎ HÀNG (Tính năng 2)
+            function initCartEvents() {
+                const addButtons = document.querySelectorAll('.product-item__btn-add');
+                addButtons.forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        cartCount++;
+                        cartCountBadge.innerText = cartCount;
+                        
+                        const productId = e.target.getAttribute('data-id');
+                        const productObj = productsData.find(p => p.id == productId);
+                        showToast(`Đã thêm "${productObj.name}" vào giỏ hàng`);
+                    });
+                });
+            }
+
+            // Lần đầu tiên chạy trang web: Vẽ toàn bộ 8 sản phẩm gốc ra màn hình
+            renderProducts(productsData);
+
+            // Các hiệu ứng Category và Banner cũ của bạn giữ nguyên
+            const otherCards = document.querySelectorAll('.category-item, .flash-sale__item');
+            otherCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.5s ease';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 120 * index);
+            });
+
+            const banner = document.querySelector('.hero-banner__main img');
+            if (banner) {
+                banner.addEventListener('mouseenter', () => {
+                    banner.style.transform = 'scale(1.02)';
+                    banner.style.transition = 'transform 0.3s ease';
+                });
+                banner.addEventListener('mouseleave', () => {
+                    banner.style.transform = 'scale(1)';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
